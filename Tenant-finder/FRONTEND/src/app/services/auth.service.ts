@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   register(data: any) {
-    return this.http.post(this.api+'/register',data);
+    return this.http.post(this.api+'/users/register',data);
   }
 
   saveToken(token : string): void

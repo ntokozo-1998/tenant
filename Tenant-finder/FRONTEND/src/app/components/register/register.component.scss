@@ -5,11 +5,15 @@
     //  d-block
   }
   .body{
-    background: #34363C;
+    background: #ffff;
+    height: 100vh;
   }
-  
+  .card2{
+    background-color: #02ebbdd7
+    ;
+  }
   p{
-    color: #F1F1F1;
+    color: #Ffff;
     text-align: center;
     size: 80px;
   }
@@ -27,6 +31,13 @@
   
     border: 2px solid #ddd;
     border-radius: 4px;
+  }
+  ion-card-content {
+    --background: none;
+    // opacity:1;
+  }
+  ion-label{
+    --background: white;
   }
   
   .radio-checked.ios {
