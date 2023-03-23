@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,18 @@ export class AuthService {
   token !: string;
   loggedInUsername !: string;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+  httpClient: any;
+  
+
   constructor(private http: HttpClient) { }
 
   login(data: any) {
-    return this.http.post(this.api+'/login',data);
+    return this.http.post(this.api+'/users/login',data);
   }
 
   register(data: any) {
@@ -29,5 +38,6 @@ export class AuthService {
   forgotPassword(data: any) {
     return this.http.post(this.api+'/forgotPassword',data);
   }
+  
 }
 

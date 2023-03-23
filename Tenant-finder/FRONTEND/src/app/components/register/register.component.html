@@ -1,31 +1,40 @@
-
+<!-- 
 <div class="body">
-  <img src="../../../assets/image/Screenshot 2023-03-18 094248.png" class="">
-  <div class="container-fluid">
-<form [formGroup] = "AddUserForm" novalidate>
+
+<div class="container-fluid">
+
+<form >
+
+  
+
+
     <ion-card class="card2">
       <ion-card-header>
         <ion-card-title>Create an account</ion-card-title>
-      </ion-card-header>
+      <[formGroup] = "AddUserForm" novalidate class="form"/ion-card-header>
     
-      <ion-card-content>
-         
-        <ion-radio-group value="custom-checked" (change)="checkSelected($event)">
-          <ion-label for="radios" class="account">Account Type</ion-label>
-          <br><br>
+       <ion-card-content>
 
-          <ion-radio value="custom" id="Tenant" name="radio" formControlName="usertype" value="Tenant"></ion-radio>
-          <ion-label for="radios" class="account" >Tenant</ion-label>
+        <div class="flex justify-between" (change)="checkSelected($event)">
+          <div>
+            <ion-label class="label cursor-pointer">
+              <p class="label-text text-white">Account type</p> 
+            </ion-label>
+          </div>
+          <div>
+            <ion-label class="label cursor-pointer">
+              <p class="label-text1 text-white mx-2">Tenant</p> 
+              <input type="radio" name="usertype" value="Tenant"  class="radio-btn" formControlName="usertype"/>
+            </ion-label>
+          </div>
+          <div>
+            <ion-label class="label cursor-pointer">
+              <p class="label-text text-white mx-2">Landlord</p> 
+              <input type="radio" name="usertype" value="Landlord" formControlName="usertype"/>
+            </ion-label>
+          </div>
           
-          <ion-radio value="custom-checked" id="Landlord" name="radio" formControlName="usertype" value="Landlord"></ion-radio>
-          <ion-label for="radios" class="account" >Landlord</ion-label>
-
-        </ion-radio-group>
-
-        <!-- <input type="radio" id="html" name="fav_language" value="HTML">
-          <label for="html">HTML</label><br>
-          <input type="radio" id="css" name="fav_language" value="CSS">
-          <label for="css">CSS</label><br> -->
+        </div>
 
 <ion-list>
   <ion-item >
@@ -48,15 +57,6 @@
     <ion-input placeholder="confirm here.." formControlName="confirmPassword"></ion-input>
   </ion-item>
 
-  <!-- <ion-item>
-    <ion-label>Phone:</ion-label>
-    <ion-input placeholder="Phone.." formControlName="phone"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Address:</ion-label>
-    <ion-input placeholder="Adddress.."></ion-input>
-  </ion-item> -->
 </ion-list>
 <br>
 <ion-buttons slot="secondary">
@@ -68,7 +68,70 @@
       
     </ion-card>
 </form>
+</div> -->
+
+<div class="head">
+
+  <form action="" [formGroup] = "AddUserForm" novalidate class="form">
+  <ion-card class="container">
+  
+    <ion-card-content class="frm">
+
+      <h1 class="name1">Sign in</h1>
+
+      <div class="flex justify-between" (change)="checkSelected($event)">
+        <div>
+          <ion-label class="label cursor-pointer">
+            <p class="name">Account Type:</p> 
+          </ion-label>
+        </div>
+        <div>
+          <ion-label class="label cursor-pointer">
+            <p class="name ">Tenant
+            <input type="radio" name="usertype" value="Tenant"  class="radio-btn" formControlName="usertype"/></p> 
+          </ion-label>
+        </div>
+        <div>
+          <ion-label class="label cursor-pointer">
+            <p class="name">Landlord
+            <input type="radio" name="usertype" value="Landlord" formControlName="usertype"/></p> 
+          </ion-label>
+        </div>
+        <br>
+      </div>
+
+      <div >
+       
+        
+            <div class="form-group">
+                <label class="name">Full name:</label>
+                <input class="form-control" placeholder="Enter your full name" formControlName="fullname">
+            </div>
+            <div class="form-group">
+                <label class="name">Email:</label>
+                <input class="form-control" placeholder="Enter email" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label class="name">Pasword:</label>
+                <input class="form-control" placeholder="Enter password" formControlName="password">
+            </div>
+            <div class="form-group">
+              <label class="name">Pasword:</label>
+              <input class="form-control" placeholder="Confirm password" formControlName="confirmPassword">
+          </div>
+            <div class="form-group">
+                <ion-button class="btn btn1" (click)="AddUser()">Submit</ion-button>
+            </div>
+        
+    </div>
+    </ion-card-content>
+  </ion-card>
+</form>
+  <div class="container" >
+    
 </div>
+</div>
+
 
 
 

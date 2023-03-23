@@ -11,11 +11,11 @@ const data = await pool.query(`SELECT * FROM public.users WHERE email= $1;`, [em
 const user = data.rows;
 if (user.length === 0) {
 res.status(400).json({
-error: "User is not registered, Sign Up first",
+error: "User not registered",
 });
 }
 else {
-bcrypt.compare(password, user[0].password, (err, result) => { //Comparing the hashed password
+bcrypt.compare(password, user_id.password, (err, result) => { //Comparing the hashed password
 if (err) {
 res.status(500).json({
 error: "Server error",
