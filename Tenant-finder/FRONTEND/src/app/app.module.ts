@@ -8,12 +8,18 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LandingComponent } from './landing/landing.component';
+import { RentalsComponent } from './components/rentals/rentals.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LandingComponent,
+    RentalsComponent,
+    FooterComponent
   
   ],
 
