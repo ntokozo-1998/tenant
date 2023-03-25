@@ -1,0 +1,46 @@
+.heading{
+    text-align: center;
+    padding-top: 18px;
+    padding-bottom: 2px;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 48px;
+    color: var(--main-green);
+    font-size: 25px;
+    font-weight: bold;
+  }
+  // .verify{
+  //   background-color: red;
+  //   width: 100%;
+  //   height: 3rem;
+  // }
+  
+  .btn-save{
+    background-color: var(--main-green);
+  }
+  .btn-save:hover{
+    background-color: var(--yellow-dark);
+  }
+  
+  .btn-cancel{
+    background-color: var(--gray-dark);
+  }
+  .btn-cancel:hover{
+    background-color: var(--gray);
+    color: var(--main-green);
+  }
+  
+  .livestock-img img.loaded {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .livestock-img:hover::after {
+    max-width: 80px;
+    transition: max-width 1s;
+  }
+  .text-error
+  {
+    color: var(--red);
+  }
+  
+  

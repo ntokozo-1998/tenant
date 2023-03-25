@@ -38,6 +38,21 @@ export class AuthService {
   forgotPassword(data: any) {
     return this.http.post(this.api+'/forgotPassword',data);
   }
+
+  GetAllUsers(): Observable<any> {
+    return this.httpClient.get(this.api+'/users/getUsers', this.httpOptions).pipe();
+  }
+
+  updateUser(id: any, data: any): Observable<any> {
+    let API_URL = this.api+ '/users/updateUsers/'+id;
+    return this.httpClient.put(API_URL, data).pipe();
+  }
+
+  DeleteUser(id: any, data: any): Observable<any> {
+    console.log(data)
+    let API_URL = this.api+ '/users/deleteUser/'+id;
+    return this.httpClient.put(API_URL, data).pipe();
+  }
   
 }
 

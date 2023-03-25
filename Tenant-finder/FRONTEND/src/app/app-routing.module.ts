@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormComponent } from './components/form/form.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LandingComponent } from './landing/landing.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'rentals', component:LoginComponent},
   {path: 'landing', component:LandingComponent},
-  {path: 'footer', component:FooterComponent}
+  {path: 'footer', component:FooterComponent},
+  {path: 'form', component:FormComponent}
 ];
 @NgModule({
   imports: [

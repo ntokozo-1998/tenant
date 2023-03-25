@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingComponent } from './landing/landing.component';
 import { RentalsComponent } from './components/rentals/rentals.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RegisterComponent,
     LandingComponent,
     RentalsComponent,
-    FooterComponent
+    FooterComponent,
+    FormComponent
   
   ],
 
