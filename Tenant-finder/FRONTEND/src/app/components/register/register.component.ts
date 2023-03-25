@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators,ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
+<<<<<<< Updated upstream
 import { AuthService } from 'app/services/auth.service';
+=======
+import { AuthService } from '../../services/auth.service';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-register',
@@ -14,6 +18,7 @@ export class RegisterComponent  implements OnInit {
   tempStatus:any;
   selected: any = 'Tenant';
 
+<<<<<<< Updated upstream
   AddUserForm: UntypedFormGroup = new UntypedFormGroup({
     fullname: new UntypedFormControl(''),
     email: new UntypedFormControl(''),
@@ -22,12 +27,36 @@ export class RegisterComponent  implements OnInit {
     usertype:  new UntypedFormControl('')
 });
 
+=======
+  // user = {
+  //   name:'',
+  //   surname :'',
+  //   email :'',
+  //   password:'',
+  //   account :'',
+
+  tempStatus:any;
+  selected: any = 'Landlord';
+
+  AddUserForm: UntypedFormGroup = new UntypedFormGroup({
+    fullname: new UntypedFormControl(''),
+    email: new UntypedFormControl(''),
+    // phone:  new FormControl(''),
+    password: new UntypedFormControl(''),
+    usertype:  new UntypedFormControl('')
+});
+
+>>>>>>> Stashed changes
 decoded: any;
 
 submitted = false;
 passwordErr!:any;
 
+<<<<<<< Updated upstream
   constructor(private authService:AuthService, private router: Router, public fb: UntypedFormBuilder) { }
+=======
+  constructor(private router: Router, private authService: AuthService, public fb: UntypedFormBuilder) { }
+>>>>>>> Stashed changes
 
   myForm() {
     this.AddUserForm = this.fb.group({
@@ -42,11 +71,17 @@ passwordErr!:any;
     });
   }
 
+<<<<<<< Updated upstream
   ngOnInit(): void {
     this.myForm();
 
   }
  
+=======
+  ngOnInit(): void{
+    this.myForm();
+  }
+>>>>>>> Stashed changes
 
   get formValidation(): { [key: string]: AbstractControl } {
     return this.AddUserForm.controls;
@@ -80,6 +115,7 @@ passwordErr!:any;
       {
         this.passwordErr = "";
   
+<<<<<<< Updated upstream
         if(this.AddUserForm.value.usertype === 'Landlord')
         {
           // this.tempStatus = "Not verified";
@@ -88,15 +124,31 @@ passwordErr!:any;
         if(this.AddUserForm.value.usertype === 'Tenant')
         { 
           // this.tempStatus = "verified";
+=======
+        if(this.AddUserForm.value.usertype === 'Tenant')
+        {
+          this.tempStatus = "Not verified";
+        }
+  
+        if(this.AddUserForm.value.usertype === 'Landlord')
+        { 
+          this.tempStatus = "verified";
+>>>>>>> Stashed changes
         }
   
         let userDetails = {
           fullname:this.AddUserForm.value.fullname,
           email: this.AddUserForm.value.email,
           password: this.AddUserForm.value.password,
+<<<<<<< Updated upstream
           // phone: "N/A",
           // address: "N/A",
           // status: this.tempStatus,
+=======
+          phone: "N/A",
+          address: "N/A",
+          status: this.tempStatus,
+>>>>>>> Stashed changes
           usertype: this.AddUserForm.value.usertype,
   
         }
@@ -108,14 +160,24 @@ passwordErr!:any;
             // this.successfullToast("Succefully registered");
             sessionStorage.setItem('loggedEmail', this.AddUserForm.value.email);
   
+<<<<<<< Updated upstream
             if(this.AddUserForm.value.usertype === 'Tenant')
             {
               this.router.navigate(['/tenant']);
             }
+=======
+>>>>>>> Stashed changes
             if(this.AddUserForm.value.usertype === 'Landlord')
             {
               this.router.navigate(['/landlord']);
             }
+<<<<<<< Updated upstream
+=======
+            if(this.AddUserForm.value.usertype === 'Tenant')
+            {
+              this.router.navigate(['/tenant']);
+            }
+>>>>>>> Stashed changes
   
             this.submitted = false;
           }, (err:any) => {
@@ -147,4 +209,8 @@ passwordErr!:any;
     this.selected = event.target.value;
     console.log(this.selected);
   }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 }

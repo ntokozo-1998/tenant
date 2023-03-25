@@ -8,10 +8,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< Updated upstream
 import { LandingComponent } from './landing/landing.component';
 import { RentalsComponent } from './components/rentals/rentals.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormComponent } from './components/form/form.component';
+=======
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -31,7 +34,14 @@ import { FormComponent } from './components/form/form.component';
     ReactiveFormsModule,
     HttpClientModule,
     IonicModule.forRoot(), 
+<<<<<<< Updated upstream
     AppRoutingModule],
+=======
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+>>>>>>> Stashed changes
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

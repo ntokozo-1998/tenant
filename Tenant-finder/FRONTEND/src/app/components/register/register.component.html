@@ -1,6 +1,7 @@
 <!-- 
 <div class="body">
 
+<<<<<<< Updated upstream
 <div class="container-fluid">
 
 <form >
@@ -40,6 +41,34 @@
   <ion-item >
     <ion-label >Full Name:</ion-label>
     <ion-input placeholder="please enter your full name here.." formControlName="fullname"></ion-input>
+=======
+  <img src="../../../assets/image/Screenshot 2023-03-18 094248.png" class="">
+  <div class="container-fluid">
+
+    <form [formGroup] = "AddUserForm" novalidate>
+
+    <div class="row">
+        <div class="col-lg-8 header-div">
+          <p>
+            Create an account
+          </p>
+        </div> 
+        
+        <ion-radio-group value="custom-checked" (change)="checkSelected($event)">
+          <ion-label for="radios" class="account">Account Type</ion-label>
+          <br>
+          <ion-radio value="custom"></ion-radio>
+          <ion-label for="radios" name="usertype" value="Tenant" formControlName="usertype">Tenant</ion-label>
+          <!-- <input class="form-check-input" type="radio" name="account" formControlName="account" value="Donor" required > -->
+          <ion-radio value="custom-checked"></ion-radio>
+          <ion-label for="radios" name="usertype" value="Landlord" formControlName="usertype">Landlord</ion-label>
+        </ion-radio-group>
+
+<ion-list>
+  <ion-item>
+    <ion-label>Full Name:</ion-label>
+    <ion-input placeholder="please enter your full name here.." formControlName="fullname" [ngClass]="{ 'is-invalid': submitted && formValidation['fullname'].errors }"></ion-input>
+>>>>>>> Stashed changes
   </ion-item>
 
   <ion-item>
@@ -57,11 +86,117 @@
     <ion-input placeholder="confirm here.." formControlName="confirmPassword"></ion-input>
   </ion-item>
 
+<<<<<<< Updated upstream
 </ion-list>
 <br>
 <ion-buttons slot="secondary">
     <ion-button fill="solid" (click)="AddUser()" >Submit</ion-button>
   </ion-buttons>
+=======
+  <ion-item>
+    <ion-label>Phone:</ion-label>
+    <ion-input placeholder="Phone.." formControlName="phone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Address:</ion-label>
+    <ion-input placeholder="Adddress.." formControlName="address"></ion-input>
+  </ion-item>
+</ion-list>
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="AddUser()">Submit</ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+</div>
+    </form>
+</div>
+
+
+<!-- <div class="container-fluid form-div col-md-11 col-lg-8"> -->
+  <!-- form card Register -->
+      <!-- <div class="card-body">
+          <form class="form" id="formRegister">    
+              <div class="container-fluid">
+                <label for="Name" class="form-label">First Name</label>
+        
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" aria-label="Name" aria-describedby="addon-wrapping" formControlName="name" minlength="2" required>
+                  <span><i class="bi bi-person-fill"></i></span> 
+                </div>
+              </div>
+
+              <div class="container-fluid mb-3 col-lg-8">
+                <label for="Surname" class="form-label">Last Name</label>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control"aria-label="Surname" aria-describedby="addon-wrapping" formControlName="surname" minlength="2" required>
+                  <span><i class="bi bi-person-fill"></i></span> 
+                </div>
+              </div>
+              
+              <div class="text container-fluid mb-3 col-lg-8">
+                <label for="radios" class="account">Account Type</label>
+                <div class="radios">
+                  <br>
+                  <div class="form-check form-check-inline ">
+                    <input class="form-check-input" type="radio" name="account" formControlName="account" value="Donor" required >
+                    <label class="form-check-label label-center" for="account" style="align-content: center;">
+                      Donor
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input"  formControlName="account" type="radio" name="account" value="Donee"  required>
+                    <label class="form-check-label" for="account">
+                      Donee
+                    </label>
+                  </div>
+                </div>
+                
+              </div>
+
+                <div class="container-fluid mb-3 col-lg-8">
+                  <label for="Email" class="form-label">Email</label>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Email" aria-describedby="addon-wrapping" formControlName="email" minlength="4" required>
+                    <span><i class="bi bi-envelope-fill"></i></span> 
+                  </div>
+                </div>
+
+                <div class="container-fluid mb-3 col-lg-8">
+                  <label for="Password" class="form-label">Password</label>
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" aria-label="Password" aria-describedby="addon-wrapping" formControlName="password" minlength="4" required>
+                    <span><i class="bi bi-key-fill"></i></span> 
+                  </div>
+                </div>
+
+                <div class="container-fluid mb-3 col-lg-8">
+                  <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control" aria-label="ConfirmPassword" aria-describedby="addon-wrapping" formControlName="confirmPassword" minlength="4" required>
+                    <span><i class="bi bi-key-fill"></i></span> 
+                  </div>
+                </div>
+                <br>
+                <div class="btn-div container-fluid mb-3 col-lg-8">
+                  <button id="button" type="submit" class="btn btn-med">Register</button>
+                </div>
+                
+                  <div class="links"> -->
+                    <!-- <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p> -->
+                    <!-- <p class="small fw-bold mt-2 pt-1 mb-0 text-center">Already have an account? <a>Login</a></p>
+                  </div>
+          
+                
+
+             
+             
+          </form> -->
+
+  <!-- </div>
+>>>>>>> Stashed changes
 
       </ion-card-content>
 
