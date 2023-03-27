@@ -1,27 +1,26 @@
 const express = require('express');
-const router = express.Router();
-const login = require('../controllers/users/login');
-const reg = require('../controllers/users/register');
-const user = require('../controllers/users/user');
-const category = require('../controllers/Landlord/category');
-const rentals = require('../controllers/Landlord/rentals');
+const user = require('../controllers/user')
+const category = require('../controllers/rentals/category');
+const rental = require('../controllers/rentals/rental');
 
-//routes for login and register
-router.post('/users/login', login.login)
-router.post('/users/register', reg.register)
 
+
+const router = express.Router()
+//routes for user
+router.post('/login',user.login);
+router.post('/register',user.register);
 
 //routes for category
 router.get('/category/getCategory', category.getCategory)
-router.post('/category/createCategory', category.postCategory)
+router.post('/category/postCategory', category.postCategory)
 router.put('/category/updateCategory/:id', category.updateCategory)
 
+//routes for Rental
+router.get('/rental/getRental', rental.getRental)
+router.get('/rental/getPostedRental', rental.getPostedRental)
+router.get('/rental/getPostedRentalByUser', rental.getPostedRentalByUser)
+router.post('/rental/postRental', rental.postRental)
+router.put('/rental/updateRental/:id', rental.updateRental)
 
-//routes for livestock
-router.get('/rentals/getRentals', rentals.getRentals)
-router.get('/rentals/getPostedRentals', rentals.getPostedRentals)
-router.get('/rentals/getPostedRentalsByUser', rentals.getPostedRentalsByUser)
-router.post('/rentals/createRentals', rentals.postRentals)
-router.put('/rentals/updateRentals/:id', rentals.updateRentals)
 
-module.exports = router;  
+module.exports = router;

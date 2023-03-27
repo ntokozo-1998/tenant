@@ -8,9 +8,11 @@ export class JwtService {
 
   private helper = new JwtHelperService();
   
-constructor() { }
-getData(token: string)
-{ 
-  return this.helper.decodeToken(token);
-}
+
+  constructor() { }
+  
+  getData(token: string)
+  { 
+    return this.helper.decodeToken(token);
+  }
 }

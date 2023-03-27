@@ -105,7 +105,21 @@ p{
         margin: auto;
        }
 }
-
+.bgimg {
+    background-image: url('../../assets/image/1_bedroom_garden_cottage_in_grantham_park_1080103678200272038.jpg');
+    // height: 100%;
+    height: 100%;
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
 // page-home {
 
 //     .card-background-page {
