@@ -5,20 +5,14 @@ const Pool = require('pg').Pool;
 
 const saltRounds = 12;
 
-// const db = new Pool({
-//     user: 'admin',  //Database username
-//     host: 'localhost',  //Database host
-//     database: 'tenant', //Database database
-//     password: 'admin12345', //Database password
-//     port: 5432//Database port
-//   });
 
   const postRental = (req, res) => {
 
-    // const {UserID, image, price, age, status, weight, categoryID, breedID,} = req.body;
-    const {UserID, image, price, status, categoryID, description,address}  = req.body
+    const {image, price, address, status, description, userID, categoryID}  = req.body
 
-    pool.query('INSERT INTO "public"."Rental"("UserID", image, price, status, "categoryID",  description, address) VALUES ($1, $2, $3, $4, $5, $6, $7 )',  [UserID, image, price, status, categoryID, description, address], (error, results) => {
+    console.log(req.body)
+
+    pool.query('INSERT INTO public.rental(image, price, address, status, description, "userID", "categoryID") VALUES ($1, $2, $3, $4, $5, $6, $7 )',  [image, price, address, status, description, userID, categoryID], (error, results) => {
       if (error) {
       }
       res.status(201).send(`Rental added`)

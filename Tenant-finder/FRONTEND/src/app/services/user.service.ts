@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   baseUrl : String = 'http://localhost:8080/api';
-  fullname = sessionStorage.getItem('name')+' '+sessionStorage.getItem('surname')
+  fullname = sessionStorage.getItem('fullname')
 
 
 
@@ -87,14 +87,6 @@ export class UserService {
   updateProfilePicture(user_id:any,link:any)
   {
     return this.http.patch(this.baseUrl+'/updateProfilePicture/'+user_id, link);
-
-  }
-
-  sendReport(data:any,dev_id:any,client_id:any,post_id:any)
-  {
-    // console.log(data)
-    return this.http.post(this.baseUrl+'/sendReport/'+dev_id+'/'+client_id+'/'+post_id,data);
-
 
   }
 
