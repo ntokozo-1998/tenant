@@ -41,6 +41,7 @@ export class LoginComponent  implements OnInit {
 
   onLogin(form : FormGroup)
   {
+    console.log("first")
     
     // this.spinner.show();
         setTimeout(() => {
@@ -51,13 +52,13 @@ export class LoginComponent  implements OnInit {
     this.subscriptions.push(
       this.authService.login(form.value).subscribe((data: any)=>{
         this.authService.saveToken(data.token);
-        
 
-        const {email,fullname,usertype,user_id} = this.jwt.getData(data.token);
+        const {email,fullname,usertype,user_id,password} = this.jwt.getData(data.token);
         localStorage.setItem('usertype', usertype);
         localStorage.setItem('email',email);
         localStorage.setItem('fullname',fullname);
         localStorage.setItem('user_id',user_id);
+        localStorage.setItem('password',password);
 
         if(usertype =="Tenant") //route to relevent page
         {

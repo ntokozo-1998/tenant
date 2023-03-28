@@ -1,60 +1,16 @@
-.container{
-  max-width: 800px;
-  margin: 120px auto;
+.card-title
+{
+  font-size: 36px;
 }
-.head{
-    margin: 50px auto;
-    max-width: 800px;
+.card{}
+.bg{
+  // background-color: rgba(255, 255, 255, 0.941);
+   background-color: #FCF1DA
+  // background-color : #F3EDDF
 }
-.frm{
-  float:left;
-  text-align: left;
-  height: 400px;
-  min-width: 250px;
-  padding: 0 35px;
-  background-size: 100% 100%;
-  background-color: #f4f5f8;
+button{
+  background-color: rgba(215, 164, 68, 0.72);
 }
-
-h1{
-  margin-top: 30px;
-  margin-bottom: 20px;  
-}
-
-.form-control{
-  width: 90%;
-  padding: 12px 20px;
-  height: auto;
-}
-
-@media screen and (max-width: 700px){
-  .frm{
-    width: 100%;
-  }
-
-  .form-control{
-    width: 100%;
-  }
-  .btn{
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-
-@media screen and (max-width: 500px){
-  .frm{
-    width: 100%;
-  }
-
-  h1{
-    text-align: center;
-  }
-
-  .btn{
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-.name{
-    color: black;
+h2{
+  color: rgba(215, 164, 68, 0.72);
 }

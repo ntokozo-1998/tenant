@@ -21,11 +21,11 @@ exports.register = async (req, res)=>{
     console.log(req.body)
 
     const sql = 'SELECT * FROM users WHERE email = $1';
-    db.query(sql,[email],(err, results)=>{
+    pool.query(sql,[email],(err, results)=>{
         //console.log(results)
         if(results.rowCount == 0)
         {
-                db.query(
+                pool.query(
                     'INSERT INTO users (email , password ,fullname ,phone , address, usertype) VALUES ($1,$2,$3,$4,$5,$6) RETURNING user_id',[email , password ,fullname ,phone , address, usertype],
                     (db_err,results) => {
                         if(db_err)
@@ -44,10 +44,10 @@ exports.register = async (req, res)=>{
 }
 
 exports.login =  (req, res)=>{
-    
+
     const {email,password} = req.body;
     const sql = 'SELECT * FROM users WHERE email = $1';
-    db.query(sql,[email],(err, results)=>{
+    pool.query(sql,[email],(err, results)=>{
         if(err) 
         {res.status(400).json({message: "Error communicating with database"})}
         else{

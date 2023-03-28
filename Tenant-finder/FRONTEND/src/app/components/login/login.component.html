@@ -1,42 +1,51 @@
-  <!-- <div class="body">
-    <img src="../../../assets/image/Screenshot 2023-03-18 094248.png" class="">
-    <div class="container-fluid">
-      <div class="row">
+<form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
+  
+<div class="grid h-screen place-items-center bg">
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title mx-auto mb-2">Login</h2>
+        <div class="mx-auto">
 
-          <div class="col-lg-8 header-div">
-            <p>
-              Create an account
-            </p>
-          </div> 
+          <div class="form-control">
 
-        <form action=""  [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)" >
+            <label class="label">
+              <span for="email" class="label-text">Your Email:</span>
+            </label>
 
-          <div class="form-control py-2">
-            <ion-label class="input-group input-group-sm">
-              <span>
-                <i class="fas fa-user"></i>
-              </span>
-              <ion-input type="text" formControlName="email" class="input input-bordered input-sm w-full max-w-xs" placeholder="Email" required [email] ="true"></ion-input>
-            </ion-label>
+            <label class="input-group">
+              <span><ion-icon name="mail"></ion-icon></span>
+              <input type="text" placeholder="Enter your email" class="input input-bordered" formControlName="email" [email]="true"/>
+            </label>
 
-            <ion-label class="input-group input-group-sm">
-              <span>
-                <i class="fas fa-user"></i>
-              </span>
-              <ion-input type="password" formControlName="password" class="input input-bordered input-sm w-full max-w-xs" placeholder="Password"></ion-input>
-            </ion-label>
-
-            <div  class="flex justify-center py-5">
-              <ion-button [disabled]="loginForm.invalid" class="btn border-transparent text-white">Submit</ion-button>
-           </div>
-          
           </div>
-        </form>
+
+          <div class="form-control">
+
+            <label for="exampleInputPassword1" for="password" class="label">
+              <span class="label-text">Your Password:</span>
+            </label>
+
+            <label class="input-group">
+              <span><ion-icon name="lock-closed"></ion-icon></span>
+              <input type="password" id="exampleInputPassword1" placeholder="Confirm password" class="input input-bordered" formControlName="password"/>
+            </label>
+
+          </div>
+        </div>
+        <div class="card-actions justify-center my-4">
+          <button class="btn" id="button" type="submit">Login</button>
+        </div>
+        <p class="mx-auto">Don't have an account! <a href="" class="link" routerLink="/register" >Register</a></p>
       </div>
     </div>
-  </div> -->
+</div>
+</form>
+    
 
-<div class="head">
+
+
+
+<!-- <div class="head">
 
   <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)" class="container">
 
@@ -63,4 +72,4 @@
     </ion-card-content>
   </ion-card>
 </form>
-</div>
+</div> -->

@@ -14,17 +14,17 @@ export class FormComponent  implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
+
 //   category!:any;
-//   breed!:any;
 //   image_link!:any;
 //   fileUploaded: any = 'no';
 //   submitted :boolean = false;
 //   sub:any;
-//   editLivestockId:any
-//   livestock!:any;
-//   myLivestock!:Livestock;
-//   agetypes!:string;
-//   title:string = 'Create Livestock';
+//   editRentalId:any
+//   rental!:any;
+//   myRental!:any;
+//   usertype!:string;
+//   title:string = 'Create Rental';
 //   ifVerrified: boolean = false;
 
 
@@ -76,20 +76,15 @@ export class FormComponent  implements OnInit {
 //   file: any;
 //   isUpdating: boolean = false;
 
-//   constructor(private categoryService: CategoryService, private breedService: BreedService, private livestockService: LivestockService, 
+//   constructor(private categoryService: CategoryService, private livestockService: RentalService, 
 //     public fb: UntypedFormBuilder, private http:HttpClient, private router: Router, private route: ActivatedRoute,
-//     private spinner: NgxSpinnerService,private natification : NotificationService,private authServive:AuthService) { }
+//     private authServive:AuthService) { }
 
 //   ngOnInit(): void {
 
 //     if('loggedEmail' in sessionStorage)
 //     {
-//       //   this.logEmail = sessionStorage.getItem('loggedEmail');
-//       //   //get users list
-//       //   this.authService.GetAllUsers().subscribe((res:any) => {
-//       //     let result = res;   
-//       //     this.users = result.filter((res:any) => String(res.email) === String(this.logEmail))
-//       //  });
+
 //     }
 //     else
 //     {
@@ -104,14 +99,14 @@ export class FormComponent  implements OnInit {
 //     });
 
 //     this.sub = this.route.params.subscribe(params => {
-//       return this.editLivestockId = params['id'];
+//       return this.editRentalId = params['id'];
 //     });
 
-//     if(this.editLivestockId != undefined)
+//     if(this.editRentalId != undefined)
 //     {
 //       this.title = "Edit Livestock";
 
-//       this.populateDate(this.editLivestockId)
+//       this.populateDate(this.editRentalId)
 //     }
 // this.getAllUsers();
 //   }
@@ -120,17 +115,17 @@ export class FormComponent  implements OnInit {
 //   {
 //     this.livestockService.GetAllPostedLivestock().subscribe((res:any) => {
 //       let result = res;
-//       this.livestock = result.filter((res:any) => Number(res.livestockID) === Number(editLivestockId))
-//       this.myLivestock = this.livestock[0];
+//       this.rental = result.filter((res:any) => Number(res.livestockID) === Number(editLivestockId))
+//       this.myRental = this.rental[0];
 
-//       if(this.livestock!= undefined)
+//       if(this.rental!= undefined)
 //       {
 
-//         let indexofEmptyStr = String(this.livestock[0].age).indexOf(" ");
-//         let lenghtStr = String(this.livestock[0].age).length;
-//         this.agetypes = String(this.livestock[0].age).slice((Number(indexofEmptyStr) + 1), Number(lenghtStr))
+//         let indexofEmptyStr = String(this.rental[0].age).indexOf(" ");
+//         let lenghtStr = String(this.rental[0].age).length;
+//         this.usertype = String(this.rental[0].age).slice((Number(indexofEmptyStr) + 1), Number(lenghtStr))
 
-//         let priceStr = String(String(this.livestock[0].price).slice(1, this.livestock[0].price?.length));
+//         let priceStr = String(String(this.rental[0].price).slice(1, this.rental[0].price?.length));
 //         let indexofEmptyStrprice = String(priceStr).indexOf(',');
 //         let lenghtStrPrice = String(priceStr).length;
 //         let prices = String(priceStr).slice(0, (Number(indexofEmptyStrprice) + 1)) + String(priceStr).slice((Number(indexofEmptyStrprice) + 1), Number(lenghtStrPrice))
@@ -140,30 +135,27 @@ export class FormComponent  implements OnInit {
 //         this.breedService.GetAllBreed().subscribe((res:any) => {
 //           let result = res;
     
-//           this.breed = result.filter((resss:any) => String(resss.categoryID) === String(this.livestock[0].categoryID));
+//           // this.breed = result.filter((resss:any) => String(resss.categoryID) === String(this.rental[0].categoryID));
 //         });
 
 //         this.AddLivestockForm.setValue({
-//           // UserID: this.livestock[0].UserID,
-//           // image: this.livestock[0].image,
 //           price: Number(prices.split(',').join('')),
-//           gender: this.livestock[0].gender,
-//           agetype: String(this.livestock[0].age).slice((Number(indexofEmptyStr) + 1), Number(lenghtStr)),
-//           age: Number(String(this.livestock[0].age).slice(0, Number(indexofEmptyStr))),
-//           quantity: this.livestock[0].quantity,
-//           color: this.livestock[0].color,
-//           address: this.livestock[0].address,
-//           description: this.livestock[0].description,
-//           weight: this.livestock[0].weight,
-//           categoryID: this.livestock[0].categoryID,
-//           breedID: this.livestock[0].breedID,
+//           gender: this.rental[0].gender,
+//           agetype: String(this.rental[0].age).slice((Number(indexofEmptyStr) + 1), Number(lenghtStr)),
+//           age: Number(String(this.rental[0].age).slice(0, Number(indexofEmptyStr))),
+//           quantity: this.rental[0].quantity,
+//           address: this.rental[0].address,
+//           description: this.rental[0].description,
+//           weight: this.rental[0].weight,
+//           categoryID: this.rental[0].categoryID,
+//           breedID: this.rental[0].breedID,
 //         })
 
-//         console.log("palesa", this.AddLivestockForm.value)
+//         console.log("felicia", this.AddLivestockForm.value)
 
-//         this.imageSrc = String(this.myLivestock.image);
+//         this.imageSrc = String(this.myRental.image);
 
-//         console.log('ima', this.imageSrc)
+//         console.log('ntoki', this.imageSrc)
 //       }
 
 //     });
@@ -176,7 +168,6 @@ export class FormComponent  implements OnInit {
 //     this.breedService.GetAllBreed().subscribe((res:any) => {
 //       let result = res;
 
-//       this.breed = result.filter((resss:any) => String(resss.categoryID) === String(event.target.value));
 //     });
 
 //   }
@@ -189,85 +180,6 @@ export class FormComponent  implements OnInit {
 //     }
 
 //   }
-
-
-//   // addLivestock()
-//   // {
-
-//   //   // ---------------------picture-------------- 
-//   //   this.showSpinner();
-
-//   //   const formData = new FormData();    
-//   //   formData.append("file",this.file)    
-//   //   formData.append("upload_preset","nq04upkl"); 
-
-//   //   this.http.post(this.cloudinaryUrl,formData).subscribe((res:any)=>{     
-//   //     this.image_link = res.url;
-//   //     this.image.link = this.image_link;
-
-//   //     console.log(this.image.link)
-
-//   //     let livestockDetails = {
-//   //       UserID: Number(sessionStorage.getItem('loggedID')), 
-//   //       image: this.image.link, 
-//   //       price: this.AddLivestockForm.value.price,
-//   //       age: String(this.AddLivestockForm.value.age) + " "+ String(this.AddLivestockForm.value.agetype),
-//   //       status: 'Available',
-//   //       weight: this.AddLivestockForm.value.weight,
-//   //       categoryID: this.AddLivestockForm.value.categoryID,
-//   //       breedID: this.AddLivestockForm.value.breedID,
-//   //       description: this.AddLivestockForm.value.description,
-//   //       color: this.AddLivestockForm.value.color,
-//   //       quantity: this.AddLivestockForm.value.quantity,
-//   //       address: this.AddLivestockForm.value.address,
-//   //       gender: this.AddLivestockForm.value.gender
-//   //     }
-  
-
-//   //     console.log(livestockDetails)
-
-     
-//   //       this.livestockService.CreateLivestock(livestockDetails).subscribe((next:any) => {
-//   //         this.natification.success("Successfully Added!");
-//   //         this.router.navigate(['/seller']);
-    
-//   //         this.submitted = false;
-//   //       }, (err:any) => {
-//   //         if(err.status === 201)
-//   //         {
-//   //           this.natification.success("Successfully Added!");
-//   //           this.router.navigate(['/seller']);
-//   //         }
-//   //         else if(err.status === 400)
-//   //         {
-//   //           this.natification.danger("Something went wrong, please try again!")
-//   //         }
-//   //         else{
-//   //           this.natification.warning("Something went wrong, please try again!");
-//   //         }
-//   //     });
-  
-
-  
-//   //   }
-//   //   , (ERROR) => {
-//   //     if(ERROR.status === 201)
-//   //     {
-//   //       this.natification.success("Successfully Added!");
-//   //       this.router.navigate(['/seller']);
-//   //     }
-//   //     else if(ERROR.status === 400)
-//   //     {
-//   //        this.natification.danger("Something went wrong, please try again!");
-//   //     }
-//   //     else{
-//   //       this.natification.danger("Something went wrong, please try again!");
-//   //     }
-//   //   }) 
-
-//   //   this.submitted = true;
-
-//   // }
 //   addLivestock()
 //   {
 
@@ -360,7 +272,7 @@ export class FormComponent  implements OnInit {
 //   upload()
 //   {
 //     this.showSpinner();
-//     let id = this.myLivestock.livestockID;
+//     let id = this.myRental.livestockID;
 
 //     let livestockDetails = {
 //       image: this.image_link, 
@@ -408,7 +320,6 @@ export class FormComponent  implements OnInit {
 //          this.natification.danger(msg)
 //         }
 //     });
-//       // this.router.navigate(['/homes']);
 //   } 
   
 //   async getAllUsers(){
@@ -448,7 +359,7 @@ export class FormComponent  implements OnInit {
 //     }
 
 //     else{
-//       this.image_link = this.myLivestock.image
+//       this.image_link = this.myRental.image
 //       this.upload()
 
 //     }
@@ -527,3 +438,4 @@ export class FormComponent  implements OnInit {
 
 // }
 }
+
