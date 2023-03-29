@@ -1,0 +1,163 @@
+
+<form id="formRegister" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
+  
+  <div class="grid h-screen place-items-center bg">
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title mx-auto py-2">Register</h2>
+          <div class="mx-auto">
+  
+            <div class="form-control">
+  
+              <div class="flex justify-between" (change)="checkSelected($event)">
+                <div>
+                  <label for="radio" class="label cursor-pointer">
+                    <p class="name"><b>Account Type:</b></p> 
+                  </label>
+                </div>
+                <br>
+                <div>
+                  <label class="label cursor-pointer" for="usertype">
+                    <p class="">Tenant
+                    <input type="radio" name="usertype" value="Tenant"  class="radio-btn" formControlName="usertype"/></p> 
+                  </label>
+                </div>
+                <div>
+                  <label class="label cursor-pointer" for="usertype">
+                    <p class="">Landlord
+                    <input type="radio" name="usertype" value="Landlord" formControlName="usertype"/></p> 
+                  </label>
+                </div>
+                <br>
+              </div>
+
+              <div class="form-control">
+                <label for="fullname" class="label">Full name:</label>
+
+                <label class="input-group">
+                  <span><ion-icon name="person"></ion-icon></span>
+                  <input type="fullname" placeholder="Enter your full name" class="input input-bordered" formControlName="fullname"/>
+                </label>
+                
+                <!-- <input class="form-control" placeholder="" formControlName="fullname" aria-label="fullname" aria-describedby="addon-wrapping"> -->
+            </div>
+
+            <div class="form-control">
+                <label or="Email" class="label">Email:</label>
+
+                <label class="input-group">
+                  <span><ion-icon name="mail"></ion-icon></span>
+                  <input type="email" placeholder="Enter your email" class="input input-bordered" formControlName="email" [email]="true"/>
+                </label>
+
+                <!-- <input class="form-control" placeholder="Enter email" formControlName="email" [email]="true" aria-label="Email" aria-describedby="addon-wrapping"> -->
+            </div>
+
+            <div class="form-control">
+                <label class="label" for="Password">Pasword:</label>
+
+                <label class="input-group">
+                  <span><ion-icon name="lock-closed"></ion-icon></span>
+                  <input type="password" placeholder="Confirm password" class="input input-bordered" formControlName="password"/>
+                </label>
+
+                <!-- <input type="password" class="form-control" placeholder="Enter password" formControlName="password" aria-describedby="addon-wrapping" formControlName="password" minlength="4" required> -->
+            </div>
+
+            <div class="form-control">
+              <label for="ConfirmPassword"  class="label">Confirm Pasword:</label>
+
+              <label class="input-group">
+                <span><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" placeholder="Confirm password" class="input input-bordered" formControlName="confirmPassword"/>
+              </label>
+
+              <!-- <input type="password" class="form-control" placeholder="Confirm password" formControlName="confirmPassword" aria-label="ConfirmPassword" aria-describedby="addon-wrapping"> -->
+          </div>
+  
+            </div>
+          </div>
+          <div class="card-actions justify-center my-4">
+            <button class="btn" id="button" type="submit" expand="block" (click)="presentToast('top')">Register</button>
+          </div>
+          <p class="mx-auto">Already have an account? <a href="" class="link" routerLink="/login" >Login</a></p>
+        </div>
+      </div>
+  </div>
+  </form>
+
+
+
+
+
+<!-- <div class="head">
+
+  <form action="" id="formRegister" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
+  <ion-card class="container">
+  
+    <ion-card-content class="frm">
+
+      <h1 class="name1">Sign in</h1>
+
+      <div class="flex justify-between" (change)="checkSelected($event)">
+        <div>
+          <ion-label for="radio" class="label cursor-pointer">
+            <p class="name">Account Type:</p> 
+          </ion-label>
+        </div>
+        <br>
+        <div>
+          <ion-label class="label cursor-pointer" for="usertype">
+            <p class="name ">Tenant
+            <input type="radio" name="usertype" value="Tenant"  class="radio-btn" formControlName="usertype"/></p> 
+          </ion-label>
+        </div>
+        <div>
+          <ion-label class="label cursor-pointer" for="usertype">
+            <p class="name">Landlord
+            <input type="radio" name="usertype" value="Landlord" formControlName="usertype"/></p> 
+          </ion-label>
+        </div>
+        <br>
+      </div>
+
+      <div >
+       
+        
+            <div class="form-group">
+                <label for="fullname" class="name">Full name:</label>
+                <input class="form-control" placeholder="Enter your full name" formControlName="fullname" aria-label="fullname" aria-describedby="addon-wrapping">
+            </div>
+            <div class="form-group">
+                <label or="Email" class="name">Email:</label>
+                <input class="form-control" placeholder="Enter email" formControlName="email" [email]="true" aria-label="Email" aria-describedby="addon-wrapping">
+            </div>
+            <div class="form-group">
+                <label class="name" for="Password">Pasword:</label>
+                <input type="password" class="form-control" placeholder="Enter password" formControlName="password" aria-describedby="addon-wrapping" formControlName="password" minlength="4" required>
+            </div>
+            <div class="form-group">
+              <label for="ConfirmPassword"  class="name">Confirm Pasword:</label>
+              <input type="password" class="form-control" placeholder="Confirm password" formControlName="confirmPassword" aria-label="ConfirmPassword" aria-describedby="addon-wrapping">
+          </div>
+            <div class="form-group">
+                <ion-button class="btn btn1" id="button" type="submit" expand="block" (click)="presentToast('top')">Submit</ion-button>
+            </div>
+        
+    </div>
+
+   <div class="links">
+      <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+      <p class="small fw-bold mt-2 pt-1 mb-0 text-center">Already have an account? <a href="" class="link" routerLink="/login" >Login</a></p>
+    </div> 
+
+    </ion-card-content>
+  </ion-card>
+  </form>
+
+</div> -->
+
+
+
+
+

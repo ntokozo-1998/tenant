@@ -1,0 +1,199 @@
+
+<!-- <div id="form-main" class="ion-text-center">
+  <div id="form-div">
+    <form class="form" id="form1">
+      <div class="col-span-6 sm:col-span-6">
+        <h1>Create a post</h1>
+        <label class="block text-sm font-medium text-gray-700">Rental Image</label>
+        <div class="livestock-img mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-2 pb-2">
+
+          <div class="upload w-80" *ngIf="fileUploaded == 'yes'">
+            <form>
+              <label class="uploader" ondragover="return false;"
+              [class.loaded]="loaded" 
+              [style.outlineColor]="dragging ? activeColor : baseColor"
+              (dragenter)="handleDragEnter()"
+              (dragleave)="handleDragLeave()"
+              (drop)="handleDrop($event)">
+              
+              <i class="icon icon-upload glyphicon glyphicon-upload" 
+                  [style.color]="dragging 
+                      ? ((imageSrc.length > 0) ? overlayColor : activeColor)
+                      : ((imageSrc.length > 0) ? overlayColor : baseColor)"></i>
+              
+              <img *ngIf="fileUploaded == 'yes'" [src]="imageSrc" (load)="handleImageLoad()" [class.loaded]="imageLoaded"/>
+          
+          </label>
+            </form>
+          </div>
+
+          <div class="upload w-80" >
+              <form>
+                <label class="uploader" ondragover="return false;"
+                [class.loaded]="loaded" 
+                [style.outlineColor]="dragging ? activeColor : baseColor"
+                (dragenter)="handleDragEnter()"
+                (dragleave)="handleDragLeave()"
+                (drop)="handleDrop($event)">
+                
+              
+          
+                <img [src]="imageSrc" *ngIf="fileUploaded == 'no'" alt="" class="loaded">
+            
+            </label>
+              </form>
+            </div>
+          
+          <div class="">
+            <svg *ngIf="fileUploaded == 'no'" class="sec mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div class="pics flex text-sm text-gray-600">
+              <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
+                <span *ngIf="fileUploaded == 'no'">Upload a file</span>
+                <span *ngIf="fileUploaded == 'yes'">Change a file</span>
+                
+                <input id="file-upload" name="file-upload" type="file" class="sr-only"accept="image/*" (change)="handleInputChange($event)">
+
+              </label>
+              <p *ngIf="fileUploaded == 'no'"class="pl-1">or drag and drop</p>
+            </div>
+            
+            <p class="text-xs text-gray-500">PNG, JPG, JPEG up to 10MB</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="name">
+        <label for="city" class="text-sm font-medium text-gray-700">Age type:</label>
+        <select class="form-select" required="" name="rentaltype" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm ree">
+          <option value="" selected disabled >Select rental type</option>
+          <option>Flat</option>
+          <option>House</option>
+          <option>Rooms</option>
+        </select>
+      </div>
+
+      <p class="price">
+        <input  name="price" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input " placeholder="R: price" id="price"/>
+      </p>
+      
+      <p class="address">
+        <input name="address" class="validate[required,custom[address]] feedback-input" id="address" placeholder="address"/>
+      </p>
+      
+      <p class="description">
+        <textarea name="description" class="validate[required,length[6,300]] feedback-input" id="additional info" placeholder="Comment"></textarea>
+      </p>
+      <ion-button>Submit</ion-button>
+    
+      <div class="submit">
+        <input type="submit" value="SEND" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+
+    </form>
+  </div>
+</div> -->
+
+<div class="create-post">
+  <form>
+<div class="container">
+ <h1>Create a Post</h1>
+ <hr>
+
+  <div class="rental-img mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-2 pb-2">
+
+    <div class="upload w-80" *ngIf="fileUploaded == 'yes'">
+      <form>
+        <label class="uploader" ondragover="return false;"
+        [class.loaded]="loaded" 
+        [style.outlineColor]="dragging ? activeColor : baseColor"
+        (dragenter)="handleDragEnter()"
+        (dragleave)="handleDragLeave()"
+        (drop)="handleDrop($event)">
+        
+        <i class="icon icon-upload glyphicon glyphicon-upload" 
+            [style.color]="dragging 
+                ? ((imageSrc.length > 0) ? overlayColor : activeColor)
+                : ((imageSrc.length > 0) ? overlayColor : baseColor)"></i>
+        
+        <img *ngIf="fileUploaded == 'yes'" [src]="imageSrc" (load)="handleImageLoad()" [class.loaded]="imageLoaded"/>
+    
+    </label>
+      </form>
+    </div>
+
+    <div class="upload w-80" >
+        <form>
+          <label class="uploader" ondragover="return false;"
+          [class.loaded]="loaded" 
+          [style.outlineColor]="dragging ? activeColor : baseColor"
+          (dragenter)="handleDragEnter()"
+          (dragleave)="handleDragLeave()"
+          (drop)="handleDrop($event)">
+          
+        
+    
+          <img [src]="imageSrc" *ngIf="fileUploaded == 'no'" alt="" class="loaded">
+      
+      </label>
+        </form>
+      </div>
+    
+    <div class="">
+      <svg *ngIf="fileUploaded == 'no'" class="sec" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <div class="pics flex text-sm text-gray-600">
+        <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500">
+          <span *ngIf="fileUploaded == 'no'">Upload a file</span>
+          <span *ngIf="fileUploaded == 'yes'">Change a file</span>
+          
+          <input id="file-upload" name="file-upload" type="file" class="sr-only"accept="image/*" (change)="handleInputChange($event)">
+
+        </label>
+        <p *ngIf="fileUploaded == 'no'"class="pl-1">or drag and drop</p>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- <div class="col-span-3 md:col-span-3 lg:col-span-2">
+  <label for="city" class="block text-sm font-medium text-gray-700">Rental Type</label>
+  <select class="form-select" required="" formControlName="usertype" name="agetype" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+    <option value="" selected disabled >Select age type</option>
+    <option>Flat</option>
+    <option>House</option>
+    <option>Apartment</option>
+  </select>
+</div> -->
+
+<div class="form-control w-full max-w-xs">
+  <label class="label">
+    <span class="label-text"><b>Pick the rental type</b></span>
+  </label>
+  <select class="select select-bordered">
+    <option disabled selected>Pick one</option>
+    <option>House</option>
+    <option>Apartment</option>
+    <option>Flat</option>
+    <option>Backroom</option>
+  </select>
+</div>
+
+ <label for="price"><b>Price:</b></label>
+ <input type="text" placeholder="Enter Price" name="price" id="price" required>
+
+ <label for="description"><b>Description:</b></label>
+ <input type="text" placeholder="Enter Description" name="description" id="description" required>
+ 
+ <label for="address"><b>Address:</b></label>
+ <input type="text" placeholder="Enter Address" name="address" id="address" required>
+
+
+ <button type="submit" class="submitbtn">SUBMIT</button>
+</div>
+</form> 
+<br><br>
+</div>

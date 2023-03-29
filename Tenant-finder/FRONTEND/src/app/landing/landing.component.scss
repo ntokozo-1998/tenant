@@ -1,0 +1,261 @@
+
+// .card{
+//  width: 90%;
+//  height: 80%;
+//  margin: auto;
+// }
+// .search{
+//     margin-top: 10%;
+//     width: 70%;
+//     margin: auto;
+// }
+// p{
+//     color: rgba(12, 147, 201, 0.521);
+//     text-align: center;
+//     font-style: italic;
+// }
+// .img1{
+//     width: 100%;
+//     height: 50%;
+//     object-fit: cover;
+// }
+// .t1{
+//     color: black;
+// }
+// @media only screen and (max-width: 2150px){
+//     /*Tablets [601px -> 1200px]*/
+// .img{
+//     height: 100%;
+
+//   /* Center and scale the image nicely */
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }  
+// }
+// @media only screen and (max-width: 992px){
+// 	/*Big smartphones [426px -> 600px]*/
+//     .img{
+//         // object-fit: cover;
+//         // height: 10%;
+//         // width: fit-content;
+//         height: 100%;
+
+//         /* Center and scale the image nicely */
+//         background-position: center;
+//         background-repeat: no-repeat;
+//         background-size: cover;
+//     }
+//     .card{
+//         width: 90%;
+//         height: 80%;
+//         margin: auto;
+//        }
+// }
+
+// @media only screen and (max-width: 992px){
+// 	/*Small smartphones [325px -> 425px]*/
+// //     .mobile{
+// //         display: none;
+// //     }
+// .img{
+//     // object-fit: cover;
+//     // height: 100%;
+//     // width: fit-content;
+//     height: 100%;
+
+//     /* Center and scale the image nicely */
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+// .card{
+//     width: 90%;
+//     height: 80%;
+//     margin: auto;
+//    }
+
+// }
+
+// @media (min-width: 768px) { 
+
+//     // .mobile{
+//     //     display: none;
+//     // }
+//     // .image{
+//     //     object-fit: cover;
+//     //     height: 48px;
+//     //     width: fit-content;
+//     // }
+//     .img{
+//         height: 100%;
+    
+//       /* Center and scale the image nicely */
+//       background-position: center;
+//       background-repeat: no-repeat;
+//       background-size: cover;
+//     }
+//     .card{
+//         width: 90%;
+//         height: 80%;
+//         margin: auto;
+//        }
+// }
+// .bgimg {
+//     background-image: url('../../assets/image/1_bedroom_garden_cottage_in_grantham_park_1080103678200272038.jpg');
+//     // height: 100%;
+//     height: 100%;
+    
+//     /* Center and scale the image nicely */
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+// /* iOS places the subtitle above the title */
+// ion-card-header.ios {
+//     display: flex;
+//     flex-flow: column-reverse;
+//   }
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+}
+
+/* Start Landing Page */
+
+.landing-page {
+    position: relative;
+    background-color: #FFF;
+}
+
+.landing-page .header-area {
+    display: flex;
+    padding: 25px 0 0;
+    position: relative;
+}
+
+.landing-page .header-area .logo {
+    text-transform: uppercase;
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 19px;
+    width: 300px;
+    color: #5d5d5d;
+}
+
+.landing-page .header-area .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.landing-page .header-area .links li {
+    display: inline-block;
+    margin-left: 30px;
+    color: #5d5d5d;
+    cursor: pointer;
+}
+
+.landing-page .header-area .links li:last-child {
+    border: 0;
+    border-radius: 20px;
+    padding: 10px 18px;
+    color: #FFF;
+    background-color: #6c63ff;
+}
+
+.landing-page .info {
+    width: 35%;
+    float: left;
+    margin-top: 130px;
+}
+
+.landing-page .info h1 {
+    font-size: 44px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+    color: #5d5d5d;
+}
+
+.landing-page .info p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #5d5d5d;
+}
+
+.landing-page .info button {
+    border: 0;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #6c63ff;
+}
+
+.landing-page .image {
+    width: 50%;
+    float: right;
+    margin-top: 35px;
+}
+
+.landing-page .image img {
+    max-width: 100%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* End Landing Page */
+
+
+
+
+
+// page-home {
+
+//     .card-background-page {
+
+//         ion-card {
+//           position: relative;
+//           text-align: center;
+//         }
+
+//         .card-title {
+//           position: absolute;
+//           top: 36%;
+//           font-size: 2.0em;
+//           width: 100%;
+//           font-weight: bold;
+//           color: #fff;
+//         }
+
+//         .card-subtitle {
+//           font-size: 1.0em;
+//           position: absolute;
+//           top: 52%;
+//           width: 100%;
+//           color: #fff;
+//         }
+
+//       }
+//     }
