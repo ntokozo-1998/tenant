@@ -20,13 +20,14 @@ const saltRounds = 12;
 }
 
 const getRental = (req, res) => {
+  console.log(req.body)
     pool.query('SELECT * FROM "public"."rental" ORDER BY "rentalID" ASC ', (error, results) => {
       res.status(200).send(results.rows)
     }),handleErr
 }
 
 const getPostedRental = (req, res) => {
-    pool.query('SELECT d."categoryID", d."categoryName",r.description,r."createdAT",r."UserID",r."rentalID",r.image,r.price,r.status, r.address  FROM "Rental" l AND "Category" d WHERE d."categoryID" = l."categoryID";', (error, results) => {
+    pool.query('SELECT d."categoryID", d."categoryName",r.description,r."createdAT",r."UserID",r."rentalID",r.image,r.price,r.status, r.address  FROM "rental" r AND "Category" d WHERE d."categoryID" = r."categoryID";', (error, results) => {
         res.status(200).send(results.rows)
     }),handleErr
 }
